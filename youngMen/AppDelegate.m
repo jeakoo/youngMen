@@ -17,6 +17,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:screenBounds];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    self.viewController = [[UIViewController alloc] init];
+    
+    self.nav = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    
+    [window setRootViewController: self.nav];
+    
+    [window makeKeyAndVisible];
+    
+    
+    
     return YES;
 }
 
